@@ -1,0 +1,25 @@
+{
+  "name": "@agent-runtime/contracts",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsdown --dts src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@orpc/contract": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "tsdown": "latest",
+    "typescript": "latest"
+  }
+}

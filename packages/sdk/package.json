@@ -1,0 +1,31 @@
+{
+  "name": "@agent-runtime/sdk",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Typed SDK for the Agent Runtime API.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsdown --dts src/index.ts",
+    "release": "pnpm publish",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@agent-runtime/contracts": "workspace:*",
+    "@orpc/client": "latest",
+    "@orpc/contract": "latest"
+  },
+  "devDependencies": {
+    "tsdown": "latest",
+    "typescript": "latest"
+  }
+}

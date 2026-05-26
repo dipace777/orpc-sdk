@@ -1,0 +1,27 @@
+{
+  "name": "@agent-runtime/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit && vite build",
+    "dev": "vite --host 0.0.0.0",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@agent-runtime/sdk": "workspace:*",
+    "@better-auth/api-key": "latest",
+    "@tanstack/react-router": "latest",
+    "better-auth": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  }
+}
