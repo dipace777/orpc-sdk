@@ -4,8 +4,7 @@ A minimal Turborepo monorepo for a TypeScript product with:
 
 - `apps/api`: Node.js + Hono + Better Auth + Better Auth API keys + oRPC
 - `apps/web`: React + Vite + TanStack Router dashboard
-- `packages/contracts`: contract-first oRPC API surface
-- `packages/sdk`: publishable npm client that sends `x-api-key`
+- `packages/sdk`: publishable npm client and contract source that sends `x-api-key`
 
 ## Quick Start
 
@@ -20,7 +19,7 @@ Open the web app at `http://localhost:5173`. Create an account, generate an API 
 
 ## Publish the SDK
 
-The SDK package is in `packages/sdk`. Rename `@agent-runtime/sdk` to a package name you own, then:
+The SDK package is in `packages/sdk` and is self-contained for npm publishing. Rename `@agent-runtime/sdk` to a package name you own, then:
 
 ```sh
 pnpm --filter @agent-runtime/sdk build

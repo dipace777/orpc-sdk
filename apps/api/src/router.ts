@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { contract, type ApiIdentity, type Project } from "@agent-runtime/contracts";
+import { contract, type ApiIdentity, type Project } from "@agent-runtime/sdk/contract";
 import { implement, ORPCError } from "@orpc/server";
 import { auth } from "./auth.js";
 

@@ -3,6 +3,8 @@
   "type": "module",
   "version": "0.0.0",
   "description": "Typed SDK for the Agent Runtime API.",
+  "license": "MIT",
+  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
@@ -11,18 +13,24 @@
       "types": "./dist/index.d.mts",
       "import": "./dist/index.mjs",
       "default": "./dist/index.mjs"
+    },
+    "./contract": {
+      "types": "./dist/contract.d.mts",
+      "import": "./dist/contract.mjs",
+      "default": "./dist/contract.mjs"
     }
   },
   "files": ["dist"],
   "scripts": {
-    "build": "tsdown --dts src/index.ts",
+    "build": "tsdown --dts src/index.ts src/contract.ts",
+    "prepublishOnly": "pnpm run build",
     "release": "pnpm publish",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@agent-runtime/contracts": "workspace:*",
     "@orpc/client": "latest",
-    "@orpc/contract": "latest"
+    "@orpc/contract": "latest",
+    "zod": "latest"
   },
   "devDependencies": {
     "tsdown": "latest",

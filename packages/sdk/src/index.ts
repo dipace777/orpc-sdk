@@ -1,19 +1,19 @@
 import { createORPCClient } from "@orpc/client";
 import { RPCLink } from "@orpc/client/fetch";
 import type { ContractRouterClient } from "@orpc/contract";
-import { contract } from "@agent-runtime/contracts";
+import { contract } from "./contract.js";
 
 export type AgentRuntimeClient = ContractRouterClient<typeof contract>;
 
 export interface CreateAgentRuntimeClientOptions {
   apiKey: string;
-  baseUrl?: string;
+  baseUrl: string;
   fetch?: typeof fetch;
   headers?: Record<string, string> | (() => Record<string, string> | Promise<Record<string, string>>);
 }
 
 export function createAgentRuntimeClient(options: CreateAgentRuntimeClientOptions): AgentRuntimeClient {
-  const baseUrl = (options.baseUrl ?? "http://localhost:8787").replace(/\/$/, "");
+  const baseUrl = options.baseUrl.replace(/\/$/, "");
 
   const link = new RPCLink({
     url: `${baseUrl}/rpc`,
@@ -33,4 +33,4 @@ export function createAgentRuntimeClient(options: CreateAgentRuntimeClientOption
 }
 
 export { contract };
-export type { ApiContract, ApiIdentity, Project } from "@agent-runtime/contracts";
+export type { ApiContract, ApiIdentity, Project } from "./contract.js";

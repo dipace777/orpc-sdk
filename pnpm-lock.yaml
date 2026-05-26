@@ -17,9 +17,9 @@ importers:
 
   apps/api:
     dependencies:
-      '@agent-runtime/contracts':
+      '@agent-runtime/sdk':
         specifier: workspace:*
-        version: link:../../packages/contracts
+        version: link:../../packages/sdk
       '@better-auth/api-key':
         specifier: latest
         version: 1.6.11(@better-auth/core@1.6.11(@better-auth/utils@0.4.0)(@better-fetch/fetch@1.1.21)(better-call@1.3.5(zod@4.4.3))(jose@6.2.3)(kysely@0.28.17)(nanostores@1.3.0))(@better-auth/utils@0.4.0)(better-auth@1.6.11(@prisma/client@5.22.0)(better-sqlite3@12.10.0)(pg@8.21.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))
@@ -104,33 +104,17 @@ importers:
         specifier: latest
         version: 8.0.14(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)
 
-  packages/contracts:
-    dependencies:
-      '@orpc/contract':
-        specifier: latest
-        version: 1.14.3
-      zod:
-        specifier: latest
-        version: 4.4.3
-    devDependencies:
-      tsdown:
-        specifier: latest
-        version: 0.22.0(tsx@4.22.3)(typescript@6.0.3)
-      typescript:
-        specifier: latest
-        version: 6.0.3
-
   packages/sdk:
     dependencies:
-      '@agent-runtime/contracts':
-        specifier: workspace:*
-        version: link:../contracts
       '@orpc/client':
         specifier: latest
         version: 1.14.3
       '@orpc/contract':
         specifier: latest
         version: 1.14.3
+      zod:
+        specifier: latest
+        version: 4.4.3
     devDependencies:
       tsdown:
         specifier: latest
